@@ -1,0 +1,112 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Classification Comparison Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f5f5f5;
+                margin: 20px;
+                color: #333;
+            }
+            h1 {
+                text-align: center;
+            }
+            .model-section {
+                background: #fff;
+                margin-bottom: 20px;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .model-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .model-header h2 {
+                margin: 0;
+            }
+            .metric-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            .metric-table th, .metric-table td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+            }
+            pre {
+                background: #f0f0f0;
+                padding: 10px;
+                border-radius: 4px;
+                overflow: auto;
+            }
+            img {
+                max-width: 400px;
+                display: block;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Classification Results Comparison</h1>
+    
+        <div class="model-section">
+            <div class="model-header">
+                <h2>EngineClassifier (Threshold: 0.5)</h2>
+                <span>Accuracy: 0.6883</span>
+            </div>
+            <pre>              precision    recall  f1-score   support
+
+  Non-Engine       0.64      0.98      0.77        42
+      Engine       0.92      0.34      0.50        35
+
+    accuracy                           0.69        77
+   macro avg       0.78      0.66      0.64        77
+weighted avg       0.77      0.69      0.65        77
+</pre>
+            <img src="confusion_matrix_engine_05.png" alt="Confusion Matrix for EngineClassifier"/>
+        </div>
+        
+        <div class="model-section">
+            <div class="model-header">
+                <h2>EngineClassifier (Threshold: 0.08)</h2>
+                <span>Accuracy: 0.8052</span>
+            </div>
+            <pre>              precision    recall  f1-score   support
+
+  Non-Engine       0.75      0.98      0.85        42
+      Engine       0.95      0.60      0.74        35
+
+    accuracy                           0.81        77
+   macro avg       0.85      0.79      0.79        77
+weighted avg       0.84      0.81      0.80        77
+</pre>
+            <img src="confusion_matrix_engine_008.png" alt="Confusion Matrix for EngineClassifier"/>
+        </div>
+        
+        <div class="model-section">
+            <div class="model-header">
+                <h2>MobileNet (Threshold: 0.5)</h2>
+                <span>Accuracy: 0.9610</span>
+            </div>
+            <pre>              precision    recall  f1-score   support
+
+  Non-Engine       0.95      0.98      0.96        42
+      Engine       0.97      0.94      0.96        35
+
+    accuracy                           0.96        77
+   macro avg       0.96      0.96      0.96        77
+weighted avg       0.96      0.96      0.96        77
+</pre>
+            <img src="confusion_matrix_mobilenet_05.png" alt="Confusion Matrix for MobileNet"/>
+        </div>
+        
+    </body>
+    </html>
+    
